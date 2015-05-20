@@ -4,5 +4,5 @@ var formattedName =
 var formattedRole =
 	HTMLheaderRole.replace("%data%", "UX Designer");
 
-$("#header").append(formattedName);
-$("#header").append(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
