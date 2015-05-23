@@ -7,19 +7,25 @@ var formattedRole =
 $("#header").prepend(formattedName);
 $("#header").prepend(formattedRole);
 
-/*var skills =
-["UX/UI Design", "Google Adwords", "Adobe Creative Suite"]
+//var skills =
+//["UX/UI Design", "Google Adwords", "Adobe Creative Suite"]
 
-var bio = {
+/*var bio = {
 	"name" : "Nathan",
-	"role" : UX Designer,
-	"contact info" : nathanhadinata@gmail.com
-	"picture URL" : "Nathan-Profile-150x150.jpg"
-	"welcome message" : "Boom boom boom, a lemme hear you say wayo"
-	"skills" : skills
-};
+	"role" : "UX Designer",
+	"contacts" : {
+		"mobile": "714-398-7073",
+		"email": "nathanhadinata@gmail.com",
+		"location" : "Lake Forest"
+	},
+	"welcome message" : "Boom boom boom, a lemme hear you say wayo",
+	"skills" : [
+		"UX/UI Design", "Google Adwords", "Adobe Creative Suite"
+	],
+	"bioPic" : "images/Nathan-Profile-150x150.jpg",
+}
 
-$("#main").prepend(bio);
+//$("#main").prepend(bio);
 
 /*function nameChanger(oldName) {
     var finalName = oldName;
