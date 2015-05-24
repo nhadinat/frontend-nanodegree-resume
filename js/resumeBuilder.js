@@ -3,7 +3,6 @@
 // Header
 //
 */
-
 var bio = {
 	"name" : "Nathan Hadinata",
 	"role" : "UX Designer",
@@ -48,7 +47,6 @@ var formattedLocation =
 var formattedPic =
 	HTMLbioPic.replace("%data%", bio.bioPic);
 	$("#header").append(formattedPic);
-
 var formattedMsg =
 	HTMLwelcomeMsg.replace("%data%", bio.msg);
 	$("#header").append(formattedMsg);
@@ -57,33 +55,56 @@ $("#header:last").append(HTMLskillsStart);
 var formattedSkills =
 	HTMLskills.replace("%data%", bio.skills);
 	$("#header").append(formattedSkills);
-
-
 /*
 //
 // Work Experience
 //
 */
-
-var work = {
-	"workTitle" : "Marketing Specialist",
-	"workEmployer" : "Landscape Communications, Inc.",
-	"workDates" : "March 2015 - Current",
-	"workLocation" : "Tustin, California"
-}
+var work = {}
+	work.title = "Marketing Specialist";
+	work.employer = "Landscape Communications, Inc.";
+	work.dates = "March 2015 - Current";
+	work.location = "Tustin, California";
+	work.description = "This is how we do.";
 
 $("#workExperience").append(HTMLworkStart);
-
 var formattedworkEmployer =
 //	HTMLworkEmployer.replace("#", "http://www.landscapeonline.com/");
-	HTMLworkEmployer.replace("%data%", work.workEmployer);
+	HTMLworkEmployer.replace("%data%", work.employer);
 	$("#workExperience").append(formattedworkEmployer);
-
 var formattedworkTitle =
-	HTMLworkTitle.replace("%data%", work.workTitle);
+	HTMLworkTitle.replace("%data%", work.title);
 	$("#workExperience").append(formattedworkTitle);
+var formattedworkDates =
+	HTMLworkDates.replace("%data%", work.dates);
+	$("#workExperience").append(formattedworkDates);
+var formattedworkLocation =
+	HTMLworkLocation.replace("%data%", work.location);
+	$("#workExperience").append(formattedworkLocation);
+var formattedworkDescription =
+	HTMLworkDescription.replace("%data%", work.description);
+	$("#workExperience").append(formattedworkDescription);
 
-var HTMLworkTitle = ' - %data%</a>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var school = {}
+	school["name"] = "UC Irvine";
+	school["degree"] = "Bachelor of Arts";
+	school["dates"] = "2006 - 2010";
+	school["location"] = "Irvine, California";
+	school["major"] = "Psychology and Social Behavior";
+
+$("#education").append(HTMLschoolStart);
+var formattedschoolName =
+	HTMLschoolName.replace("%data%", school.name);
+	$("#education").append(formattedschoolName);
+var formattedschoolDegree =
+	HTMLschoolDegree.replace("%data%", school.degree);
+	$("#education").append(formattedschoolDegree);
+var formattedschoolDates =
+	HTMLschoolDates.replace("%data%", school.dates);
+	$("#education").append(formattedschoolDates);
+var formattedschoolLocation =
+	HTMLschoolLocation.replace("%data%", school.location);
+	$("#education").append(formattedschoolLocation);
+var formattedschoolMajor =
+	HTMLschoolMajor.replace("%data%", school.major);
+	$("#education").append(formattedschoolMajor);
