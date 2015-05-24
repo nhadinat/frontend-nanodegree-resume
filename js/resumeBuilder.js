@@ -67,6 +67,25 @@ var work = {}
 	work.location = "Tustin, California";
 	work.description = "This is how we do.";
 
+/*var workExperience = {
+	"work" : [
+		{
+			"title" : "Marketing Specialist",
+			"employer" : "Landscape Communications, Inc.",
+			"dates" : "March 2015 - Current",
+			"location" : "Tustin, California",
+			"description" : "I am a Marketing Specialist."
+		},
+		{
+			"title" : "Digital Marketer",
+			"employer" : "Bee Social, LLC",
+			"dates" : "June 2014 - February 2015",
+			"location" : "Orange, California",
+			"description" : "I am a Digital Marketer."
+		}
+	]
+}*/
+
 $("#workExperience").append(HTMLworkStart);
 var formattedworkEmployer =
 //	HTMLworkEmployer.replace("#", "http://www.landscapeonline.com/");
@@ -84,7 +103,35 @@ var formattedworkLocation =
 var formattedworkDescription =
 	HTMLworkDescription.replace("%data%", work.description);
 	$("#workExperience").append(formattedworkDescription);
+/*
+//
+// Projects
+//
+*/
+var project = {}
+	project.title = "Responsive Portfolio";
+	project.dates = "May 2015";
+	project.description = "This is a Responsive Portfolio";
+	project.image = "images/fry.jpg";
 
+$("#projects").append(HTMLprojectStart);
+var formattedprojectTitle =
+	HTMLprojectTitle.replace("%data%", project.title);
+	$("#projects").append(formattedprojectTitle);
+var formattedprojectDates =
+	HTMLprojectDates.replace("%data%", project.dates);
+	$("#projects").append(formattedprojectDates);
+var formattedprojectDescription =
+	HTMLprojectDescription.replace("%data%", project.description);
+	$("#projects").append(formattedprojectDescription);
+var formattedprojectImage =
+	HTMLprojectImage.replace("%data%", project.image);
+	$("#projects").append(formattedprojectImage);
+/*
+//
+// Education
+//
+*/
 var school = {}
 	school["name"] = "UC Irvine";
 	school["degree"] = "Bachelor of Arts";
@@ -94,17 +141,17 @@ var school = {}
 
 $("#education").append(HTMLschoolStart);
 var formattedschoolName =
-	HTMLschoolName.replace("%data%", school.name);
+	HTMLschoolName.replace("%data%", school["name"]);
 	$("#education").append(formattedschoolName);
 var formattedschoolDegree =
-	HTMLschoolDegree.replace("%data%", school.degree);
+	HTMLschoolDegree.replace("%data%", school["degree"]);
 	$("#education").append(formattedschoolDegree);
 var formattedschoolDates =
-	HTMLschoolDates.replace("%data%", school.dates);
+	HTMLschoolDates.replace("%data%", school["dates"]);
 	$("#education").append(formattedschoolDates);
 var formattedschoolLocation =
-	HTMLschoolLocation.replace("%data%", school.location);
+	HTMLschoolLocation.replace("%data%", school["location"]);
 	$("#education").append(formattedschoolLocation);
 var formattedschoolMajor =
-	HTMLschoolMajor.replace("%data%", school.major);
+	HTMLschoolMajor.replace("%data%", school["major"]);
 	$("#education").append(formattedschoolMajor);
