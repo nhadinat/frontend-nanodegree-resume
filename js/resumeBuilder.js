@@ -51,10 +51,16 @@ var formattedMsg =
 	HTMLwelcomeMsg.replace("%data%", bio.msg);
 	$("#header").append(formattedMsg);
 
-$("#header:last").append(HTMLskillsStart);
-var formattedSkills =
-	HTMLskills.replace("%data%", bio.skills);
-	$("#header").append(formattedSkills);
+
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	for (skills in bio.skills) {
+		var formattedSkills =
+		HTMLskills.replace("%data%", bio["skills"]);
+		$("#skills").append(formattedSkills);
+	}
+}
 /*
 //
 // Work Experience
