@@ -55,26 +55,27 @@ var formattedMsg =
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
-	for (skills in bio.skills) {
+	for (skill in bio.skills) {
 		var formattedSkills =
-		HTMLskills.replace("%data%", bio["skills"]);
+		HTMLskills.replace("%data%", bio.skills[skill]);
 		$("#skills").append(formattedSkills);
 	}
 }
+
 /*
 //
 // Work Experience
 //
 */
-var work = {}
+/*var work = {}
 	work.title = "Marketing Specialist";
 	work.employer = "Landscape Communications, Inc.";
 	work.dates = "March 2015 - Current";
 	work.location = "Tustin, California";
 	work.description = "This is how we do.";
-
-/*var workExperience = {
-	"work" : [
+*/
+var work = {
+	"jobs" : [
 		{
 			"title" : "Marketing Specialist",
 			"employer" : "Landscape Communications, Inc.",
@@ -88,11 +89,56 @@ var work = {}
 			"dates" : "June 2014 - February 2015",
 			"location" : "Orange, California",
 			"description" : "I am a Digital Marketer."
+		},
+		{
+			"title" : "Digital Marketing Intern",
+			"employer" : "PurposeMatch.com",
+			"dates" : "August 2013 - October 2014",
+			"location" : "Austin, Texas",
+			"description" : "I am a Digital Marketing Intern."
+		},
+		{
+			"title" : "Employment Coach",
+			"employer" : "Integrated Resources Institute",
+			"dates" : "December 2012 - August 2014",
+			"location" : "Irvine, California",
+			"description" : "I am an Employment Coach."
+		},
+		{
+			"title" : "Marketing Intern",
+			"employer" : "Saddleback Church",
+			"dates" : "December 2011 - November 2012",
+			"location" : "Lake Forest, California",
+			"description" : "I am a Marketing Intern."
 		}
 	]
-}*/
+}
 
-$("#workExperience").append(HTMLworkStart);
+if (work.jobs.length > 0) {
+	$("#workExperience").append(HTMLworkStart);
+
+	for (job in work.jobs) {
+		var formattedworkEmployer =
+		//	HTMLworkEmployer.replace("#", "http://www.landscapeonline.com/");
+			HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedworkTitle =
+			HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedworkEmployerTitle = formattedworkEmployer + formattedworkTitle
+			$(".work-entry").append(formattedworkEmployerTitle);
+
+		var formattedworkDates =
+			HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			$(".work-entry").append(formattedworkDates);
+		var formattedworkLocation =
+			HTMLworkLocation.replace("%data%", work.jobs[job].location);
+			$(".work-entry").append(formattedworkLocation);
+		var formattedworkDescription =
+			HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			$(".work-entry").append(formattedworkDescription);
+	}
+}
+
+/*$("#workExperience").append(HTMLworkStart);
 var formattedworkEmployer =
 //	HTMLworkEmployer.replace("#", "http://www.landscapeonline.com/");
 	HTMLworkEmployer.replace("%data%", work.employer);
@@ -109,6 +155,7 @@ var formattedworkLocation =
 var formattedworkDescription =
 	HTMLworkDescription.replace("%data%", work.description);
 	$("#workExperience").append(formattedworkDescription);
+*/
 /*
 //
 // Projects
