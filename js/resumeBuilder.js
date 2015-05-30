@@ -1,8 +1,8 @@
-/*
+
 //
 // Header
 //
-*/
+
 var bio = {
 	"name" : "Nathan Hadinata",
 	"role" : "UX Designer",
@@ -20,23 +20,23 @@ var bio = {
 	"bioPic" : "images/Nathan-Profile-150x150.jpg",
 }
 
-function displayHeader() {
+//Internationalize Button for Name
+if (bio.name.length > 0) {
+	$("#header").prepend(internationalizeButton);
 
-	//Internationalize Button for Name
-	if (bio.name.length > 0) {
-		$("#header").prepend(internationalizeButton);
+	function inName(name) {
+		var name = bio.name;
+		name = name.trim().split(" ");
+		name[1] = name[1].toUpperCase();
+		name[0] = name[0].slice(0,1).toUpperCase() + 
+			name[0].slice(1).toLowerCase();
 
-		function inName(name) {
-			var name = bio.name;
-			name = name.trim().split(" ");
-			name[1] = name[1].toUpperCase();
-			name[0] = name[0].slice(0,1).toUpperCase() + 
-				name[0].slice(1).toLowerCase();
-
-			return name[0] + " " + name[1];
-		}
+		return name[0] + " " + name[1];
 	}
+}
 
+function displayHeader() {
+	
 	//Append header content
 	var formattedName =
 		HTMLheaderName.replace("%data%", bio.name);
@@ -81,11 +81,11 @@ function displayHeader() {
 	}
 }
 displayHeader();
-/*
+
 //
 // Work Experience
 //
-*/
+
 var work = {
 	"jobs" : [
 		{
@@ -150,11 +150,11 @@ function displayWork() {
 	}
 }
 displayWork();
-/*
+
 //
 // Projects
 //
-*/
+
 var project = {}
 	project.title = "Responsive Portfolio";
 	project.dates = "May 2015";
@@ -174,11 +174,11 @@ var formattedprojectDescription =
 var formattedprojectImage =
 	HTMLprojectImage.replace("%data%", project.image);
 	$("#projects").append(formattedprojectImage);
-/*
+
 //
 // Education
 //
-*/
+
 var school = {}
 	school["name"] = "UC Irvine";
 	school["degree"] = "Bachelor of Arts";
