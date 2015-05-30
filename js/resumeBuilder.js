@@ -20,47 +20,67 @@ var bio = {
 	"bioPic" : "images/Nathan-Profile-150x150.jpg",
 }
 
-var formattedName =
-	HTMLheaderName.replace("%data%", bio.name);
-	$("#header").append(formattedName);
-var formattedRole =
-	HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").append(formattedRole);
+function displayHeader() {
 
-$("#header").append(HTMLcontactGeneric);
-var formattedMobile =
-	HTMLmobile.replace("%data%", bio.contacts.mobile);
-	$("#header").append(formattedMobile);
-var formattedEmail =
-	HTMLemail.replace("%data%", bio.contacts.email);
-	$("#header").append(formattedEmail);
-var formattedGithub =
-	HTMLgithub.replace("%data%", bio.contacts.github);
-	$("#header").append(formattedGithub);
-var formattedTwitter =
-	HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	$("#header").append(formattedTwitter);
-var formattedLocation =
-	HTMLlocation.replace("%data%", bio.contacts.location);
-	$("#header").append(formattedLocation);
+	//Internationalize Button for Name
+	if (bio.name.length > 0) {
+		$("#header").prepend(internationalizeButton);
 
-var formattedPic =
-	HTMLbioPic.replace("%data%", bio.bioPic);
-	$("#header").append(formattedPic);
-var formattedMsg =
-	HTMLwelcomeMsg.replace("%data%", bio.msg);
-	$("#header").append(formattedMsg);
+		function inName(name) {
+			var name = bio.name;
+			name = name.trim().split(" ");
+			name[1] = name[1].toUpperCase();
+			name[0] = name[0].slice(0,1).toUpperCase() + 
+				name[0].slice(1).toLowerCase();
 
+			return name[0] + " " + name[1];
+		}
+	}
 
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
+	//Append header content
+	var formattedName =
+		HTMLheaderName.replace("%data%", bio.name);
+		$("#header").append(formattedName);
+	var formattedRole =
+		HTMLheaderRole.replace("%data%", bio.role);
+		$("#header").append(formattedRole);
 
-	for (skill in bio.skills) {
-		var formattedSkills =
-		HTMLskills.replace("%data%", bio.skills[skill]);
-		$("#skills").append(formattedSkills);
+	$("#header").append(HTMLcontactGeneric);
+	var formattedMobile =
+		HTMLmobile.replace("%data%", bio.contacts.mobile);
+		$("#header").append(formattedMobile);
+	var formattedEmail =
+		HTMLemail.replace("%data%", bio.contacts.email);
+		$("#header").append(formattedEmail);
+	var formattedGithub =
+		HTMLgithub.replace("%data%", bio.contacts.github);
+		$("#header").append(formattedGithub);
+	var formattedTwitter =
+		HTMLtwitter.replace("%data%", bio.contacts.twitter);
+		$("#header").append(formattedTwitter);
+	var formattedLocation =
+		HTMLlocation.replace("%data%", bio.contacts.location);
+		$("#header").append(formattedLocation);
+
+	var formattedPic =
+		HTMLbioPic.replace("%data%", bio.bioPic);
+		$("#header").append(formattedPic);
+	var formattedMsg =
+		HTMLwelcomeMsg.replace("%data%", bio.msg);
+		$("#header").append(formattedMsg);
+
+	//Append skills content
+	if (bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+
+		for (var skill in bio.skills) {
+			var formattedSkills =
+			HTMLskills.replace("%data%", bio.skills[skill]);
+			$("#skills").append(formattedSkills);
+		}
 	}
 }
+displayHeader();
 /*
 //
 // Work Experience
@@ -108,7 +128,7 @@ var work = {
 function displayWork() {
 	if (work.jobs.length > 0) {
 		$("#workExperience").append(HTMLworkStart);
-		for (job in work.jobs) {
+		for (var job in work.jobs) {
 			var formattedworkEmployer =
 			//	HTMLworkEmployer.replace("#", "http://www.landscapeonline.com/");
 				HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
