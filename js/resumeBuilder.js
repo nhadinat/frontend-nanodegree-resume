@@ -220,3 +220,9 @@ var formattedschoolLocation =
 var formattedschoolMajor =
 	HTMLschoolMajor.replace("%data%", school["major"]);
 	$("#education").append(formattedschoolMajor);
+
+//
+// Google Map
+//
+
+	$('#mapDiv').append(googleMap);
