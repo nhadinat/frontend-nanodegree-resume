@@ -178,7 +178,7 @@ function initializeMap() {
     // adds an overlay with the name of each city that will appear when a 
     // user clicks on your map
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map, marker);
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.

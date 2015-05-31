@@ -197,29 +197,47 @@ portfolio.display();
 // Education
 //
 
-var school = {}
-	school["name"] = "UC Irvine";
-	school["degree"] = "Bachelor of Arts";
-	school["dates"] = "2006 - 2010";
-	school["location"] = "Irvine, California";
-	school["major"] = "Psychology and Social Behavior";
-
-$("#education").append(HTMLschoolStart);
-var formattedschoolName =
-	HTMLschoolName.replace("%data%", school["name"]);
-	$("#education").append(formattedschoolName);
-var formattedschoolDegree =
-	HTMLschoolDegree.replace("%data%", school["degree"]);
-	$("#education").append(formattedschoolDegree);
-var formattedschoolDates =
-	HTMLschoolDates.replace("%data%", school["dates"]);
-	$("#education").append(formattedschoolDates);
-var formattedschoolLocation =
-	HTMLschoolLocation.replace("%data%", school["location"]);
-	$("#education").append(formattedschoolLocation);
-var formattedschoolMajor =
-	HTMLschoolMajor.replace("%data%", school["major"]);
-	$("#education").append(formattedschoolMajor);
+var education = {
+	"schools" : [
+		{	
+			"name" : "Udacity",
+			"degree" : "Nanodegree Certification",
+			"dates" : "April 2015 - October 2015",
+			"location" : "Lake Forest, California",
+			"major" : "Front-End Web Development"
+		},
+		{	
+			"name" : "UC Irvine",
+			"degree" : "Bachelor of Arts",
+			"dates" : "2006 - 2010",
+			"location" : "Irvine, California",
+			"major" : "Psychology and Social Behavior"
+		}
+	]
+}
+education.display = function () {
+	if (education.schools.length > 0) {
+		$("#education").append(HTMLschoolStart);
+		for (var school in education.schools) {
+			var formattedschoolName =
+				HTMLschoolName.replace("%data%", education.schools[school].name);
+				$(".education-entry:last").append(formattedschoolName);
+			var formattedschoolDegree =
+				HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+				$(".education-entry:last").append(formattedschoolDegree);
+			var formattedschoolDates =
+				HTMLschoolDates.replace("%data%", education.schools[school].dates);
+				$(".education-entry:last").append(formattedschoolDates);
+			var formattedschoolLocation =
+				HTMLschoolLocation.replace("%data%", education.schools[school].location);
+				$(".education-entry:last").append(formattedschoolLocation);
+			var formattedschoolMajor =
+				HTMLschoolMajor.replace("%data%", education.schools[school].major);
+				$(".education-entry:last").append(formattedschoolMajor);
+		}
+	}
+}
+education.display();
 
 //
 // Google Map
