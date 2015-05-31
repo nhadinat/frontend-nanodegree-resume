@@ -34,8 +34,7 @@ if (bio.name.length > 0) {
 		return name[0] + " " + name[1];
 	}
 }
-
-function displayHeader() {
+header.display = function () {
 	
 	//Append header content
 	var formattedName =
@@ -76,11 +75,11 @@ function displayHeader() {
 		for (var skill in bio.skills) {
 			var formattedSkills =
 			HTMLskills.replace("%data%", bio.skills[skill]);
-			$("#skills").append(formattedSkills);
+			$("#skills:last").append(formattedSkills);
 		}
 	}
 }
-displayHeader();
+header.display();
 
 //
 // Work Experience
@@ -125,7 +124,7 @@ var work = {
 		}
 	]
 }
-function displayWork() {
+work.display = function () {
 	if (work.jobs.length > 0) {
 		$("#workExperience").append(HTMLworkStart);
 		for (var job in work.jobs) {
@@ -135,45 +134,64 @@ function displayWork() {
 			var formattedworkTitle =
 				HTMLworkTitle.replace("%data%", work.jobs[job].title);
 			var formattedworkEmployerTitle = formattedworkEmployer + formattedworkTitle
-				$(".work-entry").append(formattedworkEmployerTitle);
+				$(".work-entry:last").append(formattedworkEmployerTitle);
 
 			var formattedworkDates =
 				HTMLworkDates.replace("%data%", work.jobs[job].dates);
-				$(".work-entry").append(formattedworkDates);
+				$(".work-entry:last").append(formattedworkDates);
 			var formattedworkLocation =
 				HTMLworkLocation.replace("%data%", work.jobs[job].location);
-				$(".work-entry").append(formattedworkLocation);
+				$(".work-entry:last").append(formattedworkLocation);
 			var formattedworkDescription =
 				HTMLworkDescription.replace("%data%", work.jobs[job].description);
-				$(".work-entry").append(formattedworkDescription);
+				$(".work-entry:last").append(formattedworkDescription);
 		}
 	}
 }
-displayWork();
+work.display();
 
 //
 // Projects
 //
 
-var project = {}
-	project.title = "Responsive Portfolio";
-	project.dates = "May 2015";
-	project.description = "This is a Responsive Portfolio";
-	project.image = "images/fry.jpg";
-
-$("#projects").append(HTMLprojectStart);
-var formattedprojectTitle =
-	HTMLprojectTitle.replace("%data%", project.title);
-	$("#projects").append(formattedprojectTitle);
-var formattedprojectDates =
-	HTMLprojectDates.replace("%data%", project.dates);
-	$("#projects").append(formattedprojectDates);
-var formattedprojectDescription =
-	HTMLprojectDescription.replace("%data%", project.description);
-	$("#projects").append(formattedprojectDescription);
-var formattedprojectImage =
-	HTMLprojectImage.replace("%data%", project.image);
-	$("#projects").append(formattedprojectImage);
+var portfolio = {
+	"projects" : [
+		{	
+			"title" : "Responsive Portfolio",
+			"dates" : "May 2015",
+			"description" : "This is a Responsive Portfolio",
+			"image" : "images/fry.jpg"
+		},
+		{	
+			"title" : "Interactive Resume",
+			"dates" : "June 2015",
+			"description" : "This is an Interactive Resume",
+			"image" : "images/fry.jpg"
+		}
+	]
+}
+portfolio.display = function () {
+	for (project in portfolio.projects) {
+		$("#projects").append(HTMLprojectStart);
+		var formattedprojectTitle =
+			HTMLprojectTitle.replace
+			("%data%", portfolio.projects[project].title);
+			$(".project-entry:last").append(formattedprojectTitle);
+		var formattedprojectDates =
+			HTMLprojectDates.replace
+			("%data%", portfolio.projects[project].dates);
+			$(".project-entry:last").append(formattedprojectDates);
+		var formattedprojectDescription =
+			HTMLprojectDescription.replace
+			("%data%", portfolio.projects[project].description);
+			$(".project-entry:last").append(formattedprojectDescription);
+		var formattedprojectImage =
+			HTMLprojectImage.replace
+			("%data%", portfolio.projects[project].image);
+			$(".project-entry:last").append(formattedprojectImage);
+	}
+}
+portfolio.display();
 
 //
 // Education
