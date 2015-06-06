@@ -15,25 +15,13 @@ var bio = {
 	},
 	"msg" : "Boom boom boom, a lemme hear you say wayo",
 	"skills" : [
-		"UX/UI Design", " Google Adwords", " Adobe Creative Suite"
+		"UX/UI Design",
+		"Google Adwords",
+		"Adobe Creative Suite"
 	],
 	"bioPic" : "images/Nathan-Profile-150x150.jpg",
 }
 
-//Internationalize Button for Name
-if (bio.name.length > 0) {
-	$("#header").prepend(internationalizeButton);
-
-	function inName(name) {
-		var name = bio.name;
-		name = name.trim().split(" ");
-		name[1] = name[1].toUpperCase();
-		name[0] = name[0].slice(0,1).toUpperCase() + 
-			name[0].slice(1).toLowerCase();
-
-		return name[0] + " " + name[1];
-	}
-}
 header.display = function () {
 	
 	//Append header content
@@ -44,7 +32,6 @@ header.display = function () {
 		HTMLheaderRole.replace("%data%", bio.role);
 		$("#header").append(formattedRole);
 
-	$("#header").append(HTMLcontactGeneric);
 	var formattedMobile =
 		HTMLmobile.replace("%data%", bio.contacts.mobile);
 		$("#header").append(formattedMobile);
