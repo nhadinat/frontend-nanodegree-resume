@@ -14,24 +14,18 @@ var bio = {
 		"location" : "Lake Forest, California"
 	},
 	"msg" : "Boom boom boom, a lemme hear you say wayo",
-	"skills" : [
-		"UX/UI Design",
-		"Google Adwords",
-		"Adobe Creative Suite"
-	],
+	"skills" : ["UX Design","Google Adwords","Adobe Creative Suite"],
 	"bioPic" : "images/Nathan-Profile-150x150.jpg",
 }
-
 header.display = function () {
-	
-	//Append header content
+	//Name and Role
 	var formattedName =
 		HTMLheaderName.replace("%data%", bio.name);
 		$("#header").append(formattedName);
 	var formattedRole =
 		HTMLheaderRole.replace("%data%", bio.role);
 		$("#header").append(formattedRole);
-
+	//Contacts
 	var formattedMobile =
 		HTMLmobile.replace("%data%", bio.contacts.mobile);
 		$("#header").append(formattedMobile);
@@ -47,18 +41,16 @@ header.display = function () {
 	var formattedLocation =
 		HTMLlocation.replace("%data%", bio.contacts.location);
 		$("#header").append(formattedLocation);
-
+	//Picture and Message
 	var formattedPic =
 		HTMLbioPic.replace("%data%", bio.bioPic);
 		$("#header").append(formattedPic);
 	var formattedMsg =
 		HTMLwelcomeMsg.replace("%data%", bio.msg);
 		$("#header").append(formattedMsg);
-
-	//Append skills content
+	//Skills
 	if (bio.skills.length > 0) {
 		$("#header").append(HTMLskillsStart);
-
 		for (var skill in bio.skills) {
 			var formattedSkills =
 			HTMLskills.replace("%data%", bio.skills[skill]);
@@ -187,18 +179,19 @@ portfolio.display();
 var education = {
 	"schools" : [
 		{	
-			"name" : "Udacity",
-			"degree" : "Nanodegree Certification",
-			"dates" : "April 2015 - October 2015",
-			"location" : "Lake Forest, California",
-			"major" : "Front-End Web Development"
-		},
-		{	
 			"name" : "UC Irvine",
 			"degree" : "Bachelor of Arts",
 			"dates" : "2006 - 2010",
 			"location" : "Irvine, California",
 			"major" : "Psychology and Social Behavior"
+		}
+	],
+	"onlineEducation" : [
+		{
+			"title" : "Front-End Web Developer Nanodegree",
+			"onlineSchool" : "Udacity",
+			"dates" : "April 2015 - October 2015",
+			"url" : "www.udacity.com"
 		}
 	]
 }
@@ -221,7 +214,25 @@ education.display = function () {
 			var formattedschoolMajor =
 				HTMLschoolMajor.replace("%data%", education.schools[school].major);
 				$(".education-entry:last").append(formattedschoolMajor);
-		}
+		}	
+	};
+	if (education.onlineEducation.length > 0) {
+		$("#education").append(HTMLonlineClasses);
+		$('#education').find('h3').after('<div class="online-entry"></div>')
+		for (var eSchool in education.onlineEducation) {
+			var formattedonlineTitle =
+				HTMLonlineTitle.replace("%data%", education.onlineEducation[eSchool].title);
+				$(".online-entry:last").append(formattedonlineTitle);
+			var formattedonlineSchool =
+				HTMLonlineSchool.replace("%data%", education.onlineEducation[eSchool].onlineSchool);
+				$(".online-entry:last").append(formattedonlineSchool);
+			var formattedonlineDates =
+				HTMLonlineDates.replace("%data%", education.onlineEducation[eSchool].dates);
+				$(".online-entry:last").append(formattedonlineDates);
+			var formattedonlineURL =
+				HTMLonlineURL.replace("%data%", education.onlineEducation[eSchool].url);
+				$(".online-entry:last").append(formattedonlineURL);
+		}	
 	}
 }
 education.display();
