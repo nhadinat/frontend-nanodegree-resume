@@ -201,10 +201,10 @@ education.display = function () {
 		for (var school in education.schools) {
 			var formattedschoolName =
 				HTMLschoolName.replace("%data%", education.schools[school].name);
-				$(".education-entry:last").append(formattedschoolName);
 			var formattedschoolDegree =
 				HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-				$(".education-entry:last").append(formattedschoolDegree);
+			var formattedSchool = formattedschoolName + formattedschoolDegree
+				$(".education-entry:last").append(formattedSchool);
 			var formattedschoolDates =
 				HTMLschoolDates.replace("%data%", education.schools[school].dates);
 				$(".education-entry:last").append(formattedschoolDates);
@@ -222,10 +222,10 @@ education.display = function () {
 		for (var eSchool in education.onlineEducation) {
 			var formattedonlineTitle =
 				HTMLonlineTitle.replace("%data%", education.onlineEducation[eSchool].title);
-				$(".online-entry:last").append(formattedonlineTitle);
 			var formattedonlineSchool =
 				HTMLonlineSchool.replace("%data%", education.onlineEducation[eSchool].onlineSchool);
-				$(".online-entry:last").append(formattedonlineSchool);
+			var formattedonlineEducation = formattedonlineTitle + formattedonlineSchool
+				$(".online-entry:last").append(formattedonlineEducation);
 			var formattedonlineDates =
 				HTMLonlineDates.replace("%data%", education.onlineEducation[eSchool].dates);
 				$(".online-entry:last").append(formattedonlineDates);
