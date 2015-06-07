@@ -7,7 +7,7 @@ var bio = {
 	"name" : "Nathan Hadinata",
 	"role" : "UX Designer",
 	"contacts" : {
-		"mobile": "714-398-7073",
+		"mobile": "714-729-3989",
 		"email": "nathanhadinata@gmail.com",
 		"github" : "github.com/nhadinat",
 		"twitter" : "@NathanHadinata",
@@ -19,28 +19,33 @@ var bio = {
 }
 header.display = function () {
 	//Name and Role
-	var formattedName =
-		HTMLheaderName.replace("%data%", bio.name);
-		$("#header").append(formattedName);
 	var formattedRole =
 		HTMLheaderRole.replace("%data%", bio.role);
-		$("#header").append(formattedRole);
+		$("#header").prepend(formattedRole);
+	var formattedName =
+		HTMLheaderName.replace("%data%", bio.name);
+		$("#header").prepend(formattedName);
 	//Contacts
 	var formattedMobile =
 		HTMLmobile.replace("%data%", bio.contacts.mobile);
-		$("#header").append(formattedMobile);
+		$("#topContacts").append(formattedMobile);
+		$("#footerContacts").append(formattedMobile);
 	var formattedEmail =
 		HTMLemail.replace("%data%", bio.contacts.email);
-		$("#header").append(formattedEmail);
+		$("#topContacts").append(formattedEmail);
+		$("#footerContacts").append(formattedEmail);
 	var formattedGithub =
 		HTMLgithub.replace("%data%", bio.contacts.github);
-		$("#header").append(formattedGithub);
+		$("#topContacts").append(formattedGithub);
+		$("#footerContacts").append(formattedGithub);
 	var formattedTwitter =
 		HTMLtwitter.replace("%data%", bio.contacts.twitter);
-		$("#header").append(formattedTwitter);
+		$("#topContacts").append(formattedTwitter);
+		$("#footerContacts").append(formattedTwitter);
 	var formattedLocation =
 		HTMLlocation.replace("%data%", bio.contacts.location);
-		$("#header").append(formattedLocation);
+		$("#topContacts").append(formattedLocation);
+		$("#footerContacts").append(formattedLocation);
 	//Picture and Message
 	var formattedPic =
 		HTMLbioPic.replace("%data%", bio.bioPic);
