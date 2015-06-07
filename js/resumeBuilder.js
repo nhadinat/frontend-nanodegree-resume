@@ -139,13 +139,13 @@ var portfolio = {
 			"title" : "Responsive Portfolio",
 			"dates" : "May 2015",
 			"description" : "This is a Responsive Portfolio",
-			"image" : "images/fry.jpg"
+			"images" : ["https://placekitten.com/g/300/150", "https://placekitten.com/g/150/150"]
 		},
 		{	
 			"title" : "Interactive Resume",
 			"dates" : "June 2015",
 			"description" : "This is an Interactive Resume",
-			"image" : "images/fry.jpg"
+			"images" : ["https://placekitten.com/g/400/250"]
 		}
 	]
 }
@@ -164,10 +164,14 @@ portfolio.display = function () {
 			HTMLprojectDescription.replace
 			("%data%", portfolio.projects[project].description);
 			$(".project-entry:last").append(formattedprojectDescription);
-		var formattedprojectImage =
-			HTMLprojectImage.replace
-			("%data%", portfolio.projects[project].image);
-			$(".project-entry:last").append(formattedprojectImage);
+		if (portfolio.projects[project].images.length > 0) {
+			for (image in portfolio.projects[project].images) {
+				var formattedprojectImage =
+					HTMLprojectImage.replace
+					("%data%", portfolio.projects[project].images[image]);
+					$(".project-entry:last").append(formattedprojectImage);
+			}
+		}
 	}
 }
 portfolio.display();
