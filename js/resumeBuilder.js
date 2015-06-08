@@ -15,10 +15,9 @@ var bio = {
   },
   "msg" : "Boom boom boom, a lemme hear you say wayo",
   "skills" : ["UX Design","Google Adwords","Adobe Creative Suite"],
-  "bioPic" : "images/Nathan-Profile-150x150.jpg",
-}
+  "bioPic" : "images/Nathan-Profile-150x150.jpg"
+};
 header.display = function () {
-  //Name and Role
   var formattedRole =
     HTMLheaderRole.replace("%data%", bio.role);
     $("#header").prepend(formattedRole);
@@ -146,14 +145,14 @@ work.display();
 
 var portfolio = {
   "projects" : [
-    {  
+    {
       "title" : "Responsive Portfolio",
       "dates" : "2015",
       "description" : "This is a Responsive Portfolio",
       "images" : ["https://placekitten.com/g/300/150", "https://placekitten.com/g/150/150"],
       "url" : "#link1"
     },
-    {  
+    {
       "title" : "Interactive Resume",
       "dates" : "2015",
       "description" : "This is an Interactive Resume",
@@ -197,7 +196,7 @@ portfolio.display();
 
 var education = {
   "schools" : [
-    {  
+    {
       "name" : "UC Irvine",
       "degree" : "Bachelor of Arts",
       "dates" : "2010",
@@ -238,7 +237,7 @@ education.display = function () {
       var formattedschoolMajor =
         HTMLschoolMajor.replace("%data%", education.schools[school].major);
         $(".education-entry:last").append(formattedschoolMajor);
-    }  
+    }
   };
   if (education.onlineEducation.length > 0) {
     $("#education").append(HTMLonlineClasses);
