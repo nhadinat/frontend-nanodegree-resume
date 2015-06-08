@@ -76,35 +76,40 @@ var work = {
 			"employer" : "Landscape Communications, Inc.",
 			"dates" : "March 2015 - Current",
 			"location" : "Tustin, California",
-			"description" : "I am a Marketing Specialist."
+			"description" : "I am a Marketing Specialist.",
+			"url" : "#link1"
 		},
 		{
 			"title" : "Digital Marketer",
 			"employer" : "Bee Social, LLC",
 			"dates" : "June 2014 - February 2015",
 			"location" : "Orange, California",
-			"description" : "I am a Digital Marketer."
+			"description" : "I am a Digital Marketer.",
+			"url" : "#link2"
 		},
 		{
 			"title" : "Digital Marketing Intern",
 			"employer" : "PurposeMatch.com",
 			"dates" : "August 2013 - October 2014",
 			"location" : "Austin, Texas",
-			"description" : "I am a Digital Marketing Intern."
+			"description" : "I am a Digital Marketing Intern.",
+			"url" : "#link3"
 		},
 		{
 			"title" : "Employment Coach",
 			"employer" : "Integrated Resources Institute",
 			"dates" : "December 2012 - August 2014",
 			"location" : "Irvine, California",
-			"description" : "I am an Employment Coach."
+			"description" : "I am an Employment Coach.",
+			"url" : "#link4"
 		},
 		{
 			"title" : "Marketing Intern",
 			"employer" : "Saddleback Church",
 			"dates" : "December 2011 - November 2012",
 			"location" : "Lake Forest, California",
-			"description" : "I am a Marketing Intern."
+			"description" : "I am a Marketing Intern.",
+			"url" : "#link5"
 		}
 	]
 }
@@ -113,11 +118,12 @@ work.display = function () {
 		$("#workExperience").append(HTMLworkStart);
 		for (var job in work.jobs) {
 			var formattedworkEmployer =
-			//	HTMLworkEmployer.replace("#", "http://www.landscapeonline.com/");
 				HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 			var formattedworkTitle =
 				HTMLworkTitle.replace("%data%", work.jobs[job].title);
-			var formattedworkEmployerTitle = formattedworkEmployer + formattedworkTitle
+			var formattedworkURL =
+				formattedworkEmployer.replace("#", work.jobs[job].url);
+			var formattedworkEmployerTitle = formattedworkURL + formattedworkTitle;
 				$(".work-entry:last").append(formattedworkEmployerTitle);
 
 			var formattedworkDates =
@@ -142,15 +148,17 @@ var portfolio = {
 	"projects" : [
 		{	
 			"title" : "Responsive Portfolio",
-			"dates" : "May 2015",
+			"dates" : "2015",
 			"description" : "This is a Responsive Portfolio",
-			"images" : ["https://placekitten.com/g/300/150", "https://placekitten.com/g/150/150"]
+			"images" : ["https://placekitten.com/g/300/150", "https://placekitten.com/g/150/150"],
+			"url" : "#link1"
 		},
 		{	
 			"title" : "Interactive Resume",
-			"dates" : "June 2015",
+			"dates" : "2015",
 			"description" : "This is an Interactive Resume",
-			"images" : ["https://placekitten.com/g/400/250"]
+			"images" : ["https://placekitten.com/g/400/250"],
+			"url" : "#link2"
 		}
 	]
 }
@@ -160,7 +168,9 @@ portfolio.display = function () {
 		var formattedprojectTitle =
 			HTMLprojectTitle.replace
 			("%data%", portfolio.projects[project].title);
-			$(".project-entry:last").append(formattedprojectTitle);
+		var formattedprojectURL =
+			formattedprojectTitle.replace("#", portfolio.projects[project].url);
+			$(".project-entry:last").append(formattedprojectURL);
 		var formattedprojectDates =
 			HTMLprojectDates.replace
 			("%data%", portfolio.projects[project].dates);
@@ -190,17 +200,19 @@ var education = {
 		{	
 			"name" : "UC Irvine",
 			"degree" : "Bachelor of Arts",
-			"dates" : "2006 - 2010",
+			"dates" : "2010",
 			"location" : "Irvine, California",
-			"major" : "Psychology and Social Behavior"
+			"major" : "Psychology and Social Behavior",
+			"url" : "http://uci.edu/"
 		}
 	],
 	"onlineEducation" : [
 		{
 			"title" : "Front-End Web Developer Nanodegree",
 			"onlineSchool" : "Udacity",
-			"dates" : "April 2015 - October 2015",
-			"url" : "www.udacity.com"
+			"dates" : "2015",
+			"url" : "https://www.udacity.com",
+			"website" : "www.udacity.com"
 		}
 	]
 }
@@ -212,8 +224,11 @@ education.display = function () {
 				HTMLschoolName.replace("%data%", education.schools[school].name);
 			var formattedschoolDegree =
 				HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-			var formattedSchool = formattedschoolName + formattedschoolDegree
+			var formattedschoolURL =
+				formattedschoolName.replace("#", education.schools[school].url);
+			var formattedSchool = formattedschoolURL + formattedschoolDegree
 				$(".education-entry:last").append(formattedSchool);
+
 			var formattedschoolDates =
 				HTMLschoolDates.replace("%data%", education.schools[school].dates);
 				$(".education-entry:last").append(formattedschoolDates);
@@ -233,14 +248,19 @@ education.display = function () {
 				HTMLonlineTitle.replace("%data%", education.onlineEducation[eSchool].title);
 			var formattedonlineSchool =
 				HTMLonlineSchool.replace("%data%", education.onlineEducation[eSchool].onlineSchool);
-			var formattedonlineEducation = formattedonlineTitle + formattedonlineSchool
+			var formattedonlineSchoolURL =
+				formattedonlineTitle.replace("#", education.onlineEducation[eSchool].url);
+			var formattedonlineEducation = formattedonlineSchoolURL + formattedonlineSchool
 				$(".online-entry:last").append(formattedonlineEducation);
+
 			var formattedonlineDates =
 				HTMLonlineDates.replace("%data%", education.onlineEducation[eSchool].dates);
 				$(".online-entry:last").append(formattedonlineDates);
-			var formattedonlineURL =
-				HTMLonlineURL.replace("%data%", education.onlineEducation[eSchool].url);
-				$(".online-entry:last").append(formattedonlineURL);
+			var formattedonlineWebsite =
+				HTMLonlineURL.replace("%data%", education.onlineEducation[eSchool].website);
+			var formattedonlineWebsiteURL =
+				formattedonlineWebsite.replace("#", education.onlineEducation[eSchool].url);	
+				$(".online-entry:last").append(formattedonlineWebsiteURL);
 		}	
 	}
 }
@@ -250,4 +270,7 @@ education.display();
 // Google Map
 //
 
+function displayMap() {
 	$('#mapDiv').append(googleMap);
+}
+displayMap();
