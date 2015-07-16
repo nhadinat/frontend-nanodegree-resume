@@ -90,7 +90,7 @@ var work = {
       "title" : "Digital Marketing Intern",
       "employer" : "PurposeMatch.com",
       "dates" : "August 2013 - October 2014",
-      "location" : "Austin, Texas",
+      "location" : "Dallas, Texas",
       "description" : "I am a Digital Marketing Intern.",
       "url" : "#link3"
     },
