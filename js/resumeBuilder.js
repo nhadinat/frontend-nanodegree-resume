@@ -13,7 +13,7 @@ var bio = {
     "twitter" : "@NathanHadinata",
     "location" : "Lake Forest, California"
   },
-  "msg" : "Boom boom boom, a lemme hear you say wayo",
+  "msg" : "I love making sense of the digital world.",
   "skills" : ["UX Design","Google Adwords","Adobe Creative Suite"],
   "bioPic" : "images/Nathan-Profile-150x150.jpg"
 };
