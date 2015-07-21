@@ -7,8 +7,8 @@ var bio = {
   "name" : "Nathan Hadinata",
   "role" : "UX Designer",
   "contacts" : {
-    "mobile": "714-729-3989",
-    "email": "nathanhadinata@gmail.com",
+    "portfolio" : "nhadinat.github.io",
+    "linkedin" : "in/nathanhadinata",
     "github" : "github.com/nhadinat",
     "twitter" : "@NathanHadinata",
     "location" : "Lake Forest, California"
@@ -25,14 +25,14 @@ header.display = function () {
     HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
   //Contacts
-  var formattedMobile =
-    HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $("#topContacts").append(formattedMobile);
-    $("#footerContacts").append(formattedMobile);
-  var formattedEmail =
-    HTMLemail.replace("%data%", bio.contacts.email);
-    $("#topContacts").append(formattedEmail);
-    $("#footerContacts").append(formattedEmail);
+  var formattedPortfolio =
+    HTMLportfolio.replace("%data%", bio.contacts.portfolio);
+    $("#topContacts").append(formattedPortfolio);
+    $("#footerContacts").append(formattedPortfolio);
+  var formattedLinkedin =
+    HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
+    $("#topContacts").append(formattedLinkedin);
+    $("#footerContacts").append(formattedLinkedin);
   var formattedGithub =
     HTMLgithub.replace("%data%", bio.contacts.github);
     $("#topContacts").append(formattedGithub);
