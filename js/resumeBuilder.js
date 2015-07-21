@@ -70,11 +70,19 @@ header.display();
 var work = {
   "jobs" : [
     {
+      "title" : "Marketing & Project Manager",
+      "employer" : "Urban Arts Outreach",
+      "dates" : "July 2015 - Current",
+      "location" : "Orange County, California",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "url" : "#link1"
+    },
+    {
       "title" : "Marketing Specialist",
       "employer" : "Landscape Communications, Inc.",
-      "dates" : "March 2015 - Current",
+      "dates" : "March 2015 - July 2015",
       "location" : "Tustin, California",
-      "description" : "I am a Marketing Specialist.",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "url" : "#link1"
     },
     {
@@ -82,7 +90,7 @@ var work = {
       "employer" : "Bee Social, LLC",
       "dates" : "June 2014 - February 2015",
       "location" : "Orange, California",
-      "description" : "I am a Digital Marketer.",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "url" : "#link2"
     },
     {
@@ -90,7 +98,7 @@ var work = {
       "employer" : "PurposeMatch.com",
       "dates" : "August 2013 - October 2014",
       "location" : "Dallas, Texas",
-      "description" : "I am a Digital Marketing Intern.",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "url" : "#link3"
     },
     {
@@ -98,7 +106,7 @@ var work = {
       "employer" : "Integrated Resources Institute",
       "dates" : "December 2012 - August 2014",
       "location" : "Irvine, California",
-      "description" : "I am an Employment Coach.",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "url" : "#link4"
     },
     {
@@ -106,7 +114,7 @@ var work = {
       "employer" : "Saddleback Church",
       "dates" : "December 2011 - November 2012",
       "location" : "Lake Forest, California",
-      "description" : "I am a Marketing Intern.",
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "url" : "#link5"
     }
   ]
